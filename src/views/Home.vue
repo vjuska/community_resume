@@ -15,8 +15,8 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Wills upload to Vue.js!",
       profiles: [],
+      message: "2nd Test Vic's upload to Vue.js!",
     };
   },
   created: function () {

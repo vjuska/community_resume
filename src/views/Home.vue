@@ -2,6 +2,13 @@
   <div class="home">
     <h1>All Students...</h1>
     {{ students }}
+    <div>
+      Search by title:
+      <input type="text" v-model="titleFilter" list="student-details" />
+      <datalist id="student-details">
+        <option v-for="student in students" v-bind:key="student.id">{{ student.first_name }}</option>
+      </datalist>
+    </div>
     <div v-for="student in students" v-bind:key="student.id">
       <h2>{{ student.first_name.toUpperCase() }} {{ student.last_name.toUpperCase() }}</h2>
       <p>{{ student.short_bio }}</p>
@@ -21,7 +28,7 @@
         <p>Online Resume: {{ current_student.online_resume_url }}</p>
         <p>GitHub Url: {{ current_student.github_url }}</p>
         <p>Phone Number: {{ current_student.phone_number }}</p>
-
+        <!-- <button v-on:click=""></button> -->
         <button>Close</button>
       </form>
     </dialog>

@@ -10,7 +10,7 @@
 export default {
   data: function () {
     return {
-      message: "Wills upload to Vue.js!",
+      message: "2nd Test Vic's upload to Vue.js!",
     };
   },
   created: function () {},

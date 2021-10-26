@@ -10,10 +10,18 @@
     <dialog id="student-details">
       <form method="dialog">
         <h1>Student info</h1>
+        <p>Photo: {{ current_student.photo }}</p>
         <p>First name: {{ current_student.first_name }}</p>
         <p>Last name: {{ current_student.last_name }}</p>
         <p>Email: {{ current_student.email }}</p>
         <p>Short bio: {{ current_student.short_bio }}</p>
+        <p>Linkedin Url: {{ current_student.linkedin_url }}</p>
+        <p>Twitter Handle: {{ current_student.twitter_handle }}</p>
+        <p>Personal Link: {{ current_student.personal_blog }}</p>
+        <p>Online Resume: {{ current_student.online_resume_url }}</p>
+        <p>GitHub Url: {{ current_student.github_url }}</p>
+        <p>Phone Number: {{ current_student.phone_number }}</p>
+
         <button>Close</button>
       </form>
     </dialog>
@@ -23,7 +31,7 @@
 <style></style>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 export default {
   data: function () {
     return {
@@ -37,14 +45,10 @@ export default {
   },
   methods: {
     indexStudents: function () {
-      // axios.get("/students").then((response) => {
-      //   console.log("students index", response);
-      //   this.students = response.data;
-      // });
-      this.students = [
-        { id: 1, first_name: "vic", last_name: "juska", email: "vjuska@test.com", short_bio: "my name is vic" },
-        { id: 2, first_name: "will", last_name: "wright", email: "wwright@test.com", short_bio: "my name is will" },
-      ];
+      axios.get("https://afternoon-reaches-14167.herokuapp.com/students").then((response) => {
+        console.log("students index", response);
+        this.students = response.data;
+      });
     },
     showStudent: function (current_student) {
       this.current_student = current_student;

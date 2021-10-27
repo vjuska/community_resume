@@ -1,7 +1,7 @@
 <template>
   <div class="Profile">
     <h1>{{ student.first_name }} {{ student.last_name }}</h1>
-    <p>Photo: {{ student.photo }}</p>
+    <img v-bind:src="student.photo" alt="" />
     <p>Short Bio: {{ student.short_bio }}</p>
     <p>Linkedin Url: {{ student.linkedin_url }}</p>
     <p>Twitter Handle: {{ student.twitter_handle }}</p>
@@ -10,10 +10,9 @@
     <p>Git Hub Url: {{ student.github_url }}</p>
 
     <h2>Education</h2>
-    {{ student.educations }}
     <div v-for="education in student.educations" v-bind:key="education.id">
-      <p>Name: {{ education.university_name }}</p>
-      <p>Degree: {{ education }}</p>
+      <p>School: {{ education.university_name }}</p>
+      <p>Degree: {{ education.degree }}</p>
       <p>Start Date: {{ education.start_date }}</p>
       <p>End Date: {{ education.end_date }}</p>
       <p>Details: {{ education.details }}</p>

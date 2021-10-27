@@ -11,7 +11,7 @@
       <dialog id="student-details">
         <form method="dialog">
           <h1>Student info</h1>
-          <p>Photo: {{ current_student.photo }}</p>
+          <img v-bind:src="current_student.photo" alt="" />
           <p>First name: {{ current_student.first_name }}</p>
           <p>Last name: {{ current_student.last_name }}</p>
           <p>Email: {{ current_student.email }}</p>

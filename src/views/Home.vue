@@ -15,14 +15,9 @@
           <p>First name: {{ current_student.first_name }}</p>
           <p>Last name: {{ current_student.last_name }}</p>
           <p>Email: {{ current_student.email }}</p>
-          <p>Short bio: {{ current_student.short_bio }}</p>
-          <p>Linkedin Url: {{ current_student.linkedin_url }}</p>
-          <p>Twitter Handle: {{ current_student.twitter_handle }}</p>
-          <p>Personal Link: {{ current_student.personal_blog }}</p>
-          <p>Online Resume: {{ current_student.online_resume_url }}</p>
-          <p>GitHub Url: {{ current_student.github_url }}</p>
           <p>Phone Number: {{ current_student.phone_number }}</p>
-          <!-- <button v-on:click=""></button> -->
+          <button><router-link :to="`/students/${current_student.id}`">Go to profile page</router-link></button>
+
           <button>Close</button>
         </form>
       </dialog>

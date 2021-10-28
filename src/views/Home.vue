@@ -1,27 +1,65 @@
 <template>
   <div class="#student-details">
-    <h1>Profiles.</h1>
-    <div>
-      Search by First name:
-      <input type="text" v-model="titleFilter" />
-      <div v-for="student in filterBy(students, titleFilter, 'first_name')" v-bind:key="student.id">
-        <h2>{{ student.first_name }} {{ student.last_name }}</h2>
-        <button v-on:click="showStudent(student)">More info</button>
+    <!-- ======= Blog Section ======= -->
+    <div id="blog" class="#student-details">
+      <div class="blog-inner area-padding">
+        <div class="blog-overly"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"></div>
+          </div>
+          <div class="row">
+            <!-- Start Left Blog -->
+            Search by First name:
+            <input type="text" v-model="titleFilter" />
+            <div v-for="student in filterBy(students, titleFilter, 'first_name', 'last_name')" v-bind:key="student.id">
+              <div class="single-blog">
+                <div class="single-blog-img">
+                  <a href="blog.html">
+                    <img v-bind:src="student.photo" alt="" />
+                  </a>
+                </div>
+                <div class="blog-meta">
+                  <span class="comments-type">
+                    <i class="fa fa-comment-o"></i>
+                    <a href="#">{{ student.phone_number }}</a>
+                  </span>
+                  <span class="date-type">
+                    <i class="fa fa-calendar"></i>
+                    {{ student.email }}
+                  </span>
+                </div>
+                <div class="blog-text">
+                  <h4>
+                    <a href="blog.html">{{ student.first_name }} {{ student.last_name }}</a>
+                  </h4>
+                  <p></p>
+                </div>
+                <span>
+                  <a v-on:click="showStudent(student)" class="ready-btn">Profile</a>
+                </span>
+              </div>
+              <!-- Start single blog -->
+            </div>
+            <!-- End Left Blog-->
+          </div>
+        </div>
       </div>
-      <dialog id="student-details">
-        <form method="dialog">
-          <h1>Student info</h1>
-          <img v-bind:src="current_student.photo" alt="" />
-          <p>First name: {{ current_student.first_name }}</p>
-          <p>Last name: {{ current_student.last_name }}</p>
-          <p>Email: {{ current_student.email }}</p>
-          <p>Phone Number: {{ current_student.phone_number }}</p>
-          <button><router-link :to="`/students/${current_student.id}`">Go to profile page</router-link></button>
-
-          <button>Close</button>
-        </form>
-      </dialog>
     </div>
+    <!-- End Blog Section -->
+    <dialog id="student-details">
+      <form method="dialog">
+        <h1>Student info</h1>
+        <img v-bind:src="current_student.photo" alt="" />
+        <p>First name: {{ current_student.first_name }}</p>
+        <p>Last name: {{ current_student.last_name }}</p>
+        <p>Email: {{ current_student.email }}</p>
+        <p>Phone Number: {{ current_student.phone_number }}</p>
+        <button><router-link :to="`/students/${current_student.id}`">Go to profile page</router-link></button>
+
+        <button>Close</button>
+      </form>
+    </dialog>
   </div>
 </template>
 

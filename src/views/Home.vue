@@ -10,6 +10,11 @@
           </div>
           <div class="row">
             <!-- Start Left Blog -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>Profiles.</h2>
+              </div>
+            </div>
             Search by First name:
             <input type="text" v-model="titleFilter" />
             <div v-for="student in filterBy(students, titleFilter, 'first_name', 'last_name')" v-bind:key="student.id">

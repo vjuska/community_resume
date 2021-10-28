@@ -6,7 +6,7 @@
         <div class="logo">
           <h1>
             <a href="index.html">
-              <span>Profile page.</span>
+              <span>Social Network.</span>
             </a>
           </h1>
           <!-- Uncomment below if you prefer to use an image logo -->

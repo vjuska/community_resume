@@ -188,7 +188,7 @@
     <!-- End Team Section -->
 
     <h2 class="single-team-member">Twittter Feed</h2>
-    <TwitterFeed src="https://twitter.com/TechCrunch"></TwitterFeed>
+    <TwitterFeed src="https://twitter.com/facts_chuck"></TwitterFeed>
 
     <router-link to="/">Back</router-link>
   </div>

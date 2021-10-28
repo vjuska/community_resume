@@ -10,12 +10,23 @@
           </div>
           <div class="row">
             <!-- Start Left Blog -->
-            Search by First name:
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <p></p>
+                <h2>Profiles.</h2>
+              </div>
+            </div>
+            Search by name:
             <input type="text" v-model="titleFilter" />
-            <div v-for="student in filterBy(students, titleFilter, 'first_name', 'last_name')" v-bind:key="student.id">
+            <div
+              class="single-team-member"
+              v-for="student in filterBy(students, titleFilter, 'first_name', 'last_name')"
+              v-bind:key="student.id"
+            >
               <div class="single-blog">
                 <div class="single-blog-img">
                   <a href="blog.html">
+                    <p></p>
                     <img v-bind:src="student.photo" alt="" />
                   </a>
                 </div>
@@ -37,6 +48,7 @@
                 </div>
                 <span>
                   <a v-on:click="showStudent(student)" class="ready-btn">Profile</a>
+                  <p></p>
                 </span>
               </div>
               <!-- Start single blog -->

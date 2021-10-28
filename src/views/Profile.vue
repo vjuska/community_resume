@@ -11,51 +11,53 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="col-md-4 col-sm-8 col-xs-14">
-            <div class="single-team-member">
-              <div class="team-img">
-                <a href="#">
-                  <img v-bind:src="student.photo" alt="" />
-                </a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <i class="bi bi-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="bi bi-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="bi bi-instagram"></i>
-                      </a>
-                    </li>
-                  </ul>
+        <div class="section-headline text-center position-centered">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="sing-team-member">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                    <img v-bind:src="student.photo" alt="" />
+                  </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-facebook"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="bi bi-instagram"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>{{ student.first_name }} {{ student.last_name }}</h4>
+                <div class="team-content text-center">
+                  <h4>{{ student.first_name }} {{ student.last_name }}</h4>
 
-                <h4>Skills:</h4>
-                <div v-for="skill in student.skills" v-bind:key="skill.id">
-                  <h5>{{ skill.skill_name }}</h5>
+                  <h4>Skills:</h4>
+                  <div v-for="skill in student.skills" v-bind:key="skill.id">
+                    <h5>{{ skill.skill_name }}</h5>
+                  </div>
+                  <h4>Connect:</h4>
+
+                  <p>Linkedin: {{ student.linkedin_url }}</p>
+                  <p>Twitter Handle: {{ student.twitter_handle }}</p>
+                  <p>Personal Blog: {{ student.personal_blog }}</p>
+                  <p>Online Resume Url: {{ student.online_resume_url }}</p>
+                  <p>Git Hub Url: {{ student.github_url }}</p>
                 </div>
-                <h4>Connect:</h4>
-
-                <p>Linkedin: {{ student.linkedin_url }}</p>
-                <p>Twitter Handle: {{ student.twitter_handle }}</p>
-                <p>Personal Blog: {{ student.personal_blog }}</p>
-                <p>Online Resume Url: {{ student.online_resume_url }}</p>
-                <p>Git Hub Url: {{ student.github_url }}</p>
               </div>
             </div>
+            <!-- End column -->
           </div>
-          <!-- End column -->
         </div>
         <!-- ======= Services Section ======= -->
         <div id="services" class="services-area area-padding">
@@ -184,47 +186,8 @@
       </div>
     </div>
     <!-- End Team Section -->
-    <h1>{{ student.first_name }} {{ student.last_name }}</h1>
-    <img v-bind:src="student.photo" alt="" />
-    <p>Short Bio: {{ student.short_bio }}</p>
-    <p>Linkedin Url: {{ student.linkedin_url }}</p>
-    <p>Twitter Handle: {{ student.twitter_handle }}</p>
-    <p>Personal Blog: {{ student.personal_blog }}</p>
-    <p>Online Resume Url: {{ student.online_resume_url }}</p>
-    <p>Git Hub Url: {{ student.github_url }}</p>
 
-    <h2>Education</h2>
-    <div v-for="education in student.educations" v-bind:key="`education-${education.id}`">
-      <p>School: {{ education.university_name }}</p>
-      <p>Degree: {{ education.degree }}</p>
-      <p>Start Date: {{ education.start_date }}</p>
-      <p>End Date: {{ education.end_date }}</p>
-      <p>Details: {{ education.details }}</p>
-    </div>
-
-    <h2>Experiences</h2>
-    <div v-for="experience in student.experiences" v-bind:key="`experience-${experience.id}`">
-      <p>Company Name: {{ experience.company_name }}</p>
-      <p>Job Title: {{ experience.job_title }}</p>
-      <p>Details: {{ experience.details }}</p>
-      <p>Start Date: {{ experience.start_date }}</p>
-      <p>End Date: {{ experience.end_date }}</p>
-    </div>
-
-    <h2>Projects</h2>
-    <div v-for="project in student.projects" v-bind:key="`project-${project.id}`">
-      <p>Project Name: {{ project.name }}</p>
-      <p>Description: {{ project.description }}</p>
-      <p>Project Url: {{ project.url }}</p>
-      <img v-bind:src="project.screenshot" alt="" />
-    </div>
-
-    <h2>Skills</h2>
-    <div v-for="skill in student.skills" v-bind:key="`skill-${skill.id}`">
-      <p>{{ skill.skill_name }}</p>
-    </div>
-
-    <h2>Twittter Feed</h2>
+    <h2 class="single-team-member">Twittter Feed</h2>
     <TwitterFeed src="https://twitter.com/TechCrunch"></TwitterFeed>
 
     <router-link to="/">Back</router-link>

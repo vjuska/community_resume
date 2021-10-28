@@ -188,6 +188,7 @@
     </div>
 
     <h2>Twittter Feed</h2>
+    <TwitterFeed src="https://twitter.com/TechCrunch"></TwitterFeed>
 
     <router-link to="/">Back</router-link>
   </div>

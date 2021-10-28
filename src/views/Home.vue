@@ -59,17 +59,18 @@
       </div>
     </div>
     <!-- End Blog Section -->
-    <dialog id="student-details">
+    <dialog class="single-team-member" id="student-details">
       <form method="dialog">
-        <h1>Student info</h1>
+        <h1>Student Info:</h1>
         <img v-bind:src="current_student.photo" alt="" />
         <p>First name: {{ current_student.first_name }}</p>
         <p>Last name: {{ current_student.last_name }}</p>
         <p>Email: {{ current_student.email }}</p>
         <p>Phone Number: {{ current_student.phone_number }}</p>
-        <button><router-link :to="`/students/${current_student.id}`">Go to profile page</router-link></button>
-
+        <p></p>
         <button>Close</button>
+        <button><router-link :to="`/students/${current_student.id}`">Go to profile page</router-link></button>
+        <p></p>
       </form>
     </dialog>
   </div>

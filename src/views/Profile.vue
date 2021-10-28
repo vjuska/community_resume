@@ -194,7 +194,7 @@
     <p>Git Hub Url: {{ student.github_url }}</p>
 
     <h2>Education</h2>
-    <div v-for="education in student.educations" v-bind:key="education.id">
+    <div v-for="education in student.educations" v-bind:key="`education-${education.id}`">
       <p>School: {{ education.university_name }}</p>
       <p>Degree: {{ education.degree }}</p>
       <p>Start Date: {{ education.start_date }}</p>
@@ -203,7 +203,7 @@
     </div>
 
     <h2>Experiences</h2>
-    <div v-for="experience in student.experiences" v-bind:key="experience.id">
+    <div v-for="experience in student.experiences" v-bind:key="`experience-${experience.id}`">
       <p>Company Name: {{ experience.company_name }}</p>
       <p>Job Title: {{ experience.job_title }}</p>
       <p>Details: {{ experience.details }}</p>
@@ -212,9 +212,21 @@
     </div>
 
     <h2>Projects</h2>
-    <p>{{ student.projects }}</p>
+    <div v-for="project in student.projects" v-bind:key="`project-${project.id}`">
+      <p>Project Name: {{ project.name }}</p>
+      <p>Description: {{ project.description }}</p>
+      <p>Project Url: {{ project.url }}</p>
+      <img v-bind:src="project.screenshot" alt="" />
+    </div>
+
     <h2>Skills</h2>
-    <p>{{ student.skills }}</p>
+    <div v-for="skill in student.skills" v-bind:key="`skill-${skill.id}`">
+      <p>{{ skill.skill_name }}</p>
+    </div>
+
+    <h2>Twittter Feed</h2>
+    <TwitterFeed src="https://twitter.com/TechCrunch"></TwitterFeed>
+
     <router-link to="/">Back</router-link>
   </div>
 </template>
